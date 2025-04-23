@@ -183,7 +183,7 @@ Set-Content -Path "orderclient.js" -Value $javascript
 
 # Create database
 write-host "Creating the $sqlDatabaseName database..."
-sqlcmd -S "$synapseWorkspace.sql.azuresynapse.net" -U $sqlUser -P $sqlPassword -d $sqlDatabaseName -I -l 30 -i setup.sql
+Invoke-SqlCmd -S "$synapseWorkspace.sql.azuresynapse.net" -U $sqlUser -P $sqlPassword -d $sqlDatabaseName -I -l 30 -i setup.sql
 
 # Pause SQL Pool
 write-host "Pausing the $sqlDatabaseName SQL Pool..."
